@@ -22,6 +22,7 @@ fi
 mkdir -p "$package_dir"
 rsync -avz "$WERCKER_SOURCE_DIR/" "$package_dir/"
 export WERCKER_SOURCE_DIR="$package_dir"
+export GOPATH="$GOPATH:$WERCKER_SOURCE_DIR"
 
 info "\$WERCKER_SOURCE_DIR now points to: $WERCKER_SOURCE_DIR"
 success "Go workspace setup finished"
